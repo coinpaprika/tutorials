@@ -1,7 +1,7 @@
-# 🪙 Fetch Token Prices with DEX Paprika API
+# 🪙 Fetch Token Prices with DexPaprika API
 
 ## 📌 Overview
-In this tutorial, you'll learn how to **fetch the price of any token** using **DEX Paprika API**, CoinPaprika’s latest product. The tutorial demonstrates how to structure simple **cURL** requests and use API endpoints directly from the command line.
+In this tutorial, you'll learn how to **fetch the price of any token** using **DexPaprika API**, CoinPaprika’s latest product. The tutorial demonstrates how to structure simple **cURL** requests and use API endpoints directly from the command line.
 
 ## 🎥 Watch the Video
 📺 **[https://www.youtube.com/watch?v=BaRvndUG1EQ]** - Step-by-step guide on retrieving token prices.
@@ -14,21 +14,21 @@ In this tutorial, you'll learn how to **fetch the price of any token** using **D
 2️⃣ **Get Available Networks**  
    - Use the API to list all supported blockchain networks:  
      ```sh
-     curl -X GET "https://api.dexpaprika.com/networks"
+     curl -X GET "https://api.dexpaprika.com/networks" | jq
      ```
    - Choose a network from the response.
 
 3️⃣ **Search for Token Address**  
    - Use the `search` endpoint to find a token by name or address:  
      ```sh
-     curl -X GET "https://api.dexpaprika.com/search?query=YOUR_INPUT"
+     curl -X GET "https://api.dexpaprika.com/search?query=YOUR_INPUT" | jq
      ```
    - Extract the correct token address from the response.
 
 4️⃣ **Fetch the Token Price**  
    - Once you have the **network** and **token address**, use:  
      ```sh
-     curl -X GET "https://api.dexpaprika.com/networks/{network}/tokens/{token_address}"
+     curl -X GET "https://api.dexpaprika.com/networks/{network}/tokens/{token_address}" | jq
      ```
    - This will return the token’s **Latest Data**.
 
@@ -43,4 +43,4 @@ In this tutorial, you'll learn how to **fetch the price of any token** using **D
 📜 **API Documentation:** [https://docs.dexpaprika.com/api-reference/tokens/get-a-tokens-latest-data-on-a-network]  
 💬 **Need Help? Join our Discord!** [https://discord.gg/mS4cWp6a]  
 
-🚀 The **DEX Paprika API** is currently in **beta** and free to use. Try it out and let us know what you think!  
+🚀 The **DexPaprika API** is currently in **beta** and free to use. Try it out and let us know what you think!  

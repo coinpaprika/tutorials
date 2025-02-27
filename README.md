@@ -1,6 +1,6 @@
-# 📚 Tutorials Repository - Learn to Use DEX Paprika API 🚀
+# 📚 Tutorials Repository - Learn to Use DexPaprika API 🚀
 
-Welcome to the **DEX Paprika API Tutorials** repository! This is your go-to resource for learning how to leverage the **DEX Paprika API**, the latest product from **CoinPaprika**, to fetch and analyze token data.
+Welcome to the **DexPaprika API Tutorials** repository! This is your go-to resource for learning how to leverage the **DexPaprika API**, the latest product from **CoinPaprika**, to fetch and analyze token data.
 
 ## 📌 What You’ll Find Here
 - Step-by-step tutorials to help you navigate through our API
@@ -10,7 +10,7 @@ Welcome to the **DEX Paprika API Tutorials** repository! This is your go-to reso
 ## 🚀 Quick Start
 1. Clone the repository:
    ```sh
-   git clone https://github.com/yourusername/tutorials.git
+   git clone https://github.com/coinpaprika/tutorials.git
    ```
 2. Navigate to the tutorial folder of your choice and follow the README inside.
 
@@ -19,7 +19,7 @@ Below is a list of available tutorials in this repository:
 
 | 📁 Tutorial Name | 📜 Description |
 |-----------------|--------------|
-| [**fetch-token-price/**](fetch-token-price/) | Learn how to retrieve the price of any token using DEX Paprika API. |
+| [**getting-started/**](getting-started/) | Learn how to retrieve the price of any token using DexPaprika API. |
 | More Coming Soon... | Stay tuned for additional guides! |
 
 ## 📢 Resources
