@@ -1,0 +1,28 @@
+{
+  "name": "crypto-alert-bot",
+  "version": "1.0.0",
+  "description": "A Telegram bot that sends alerts when cryptocurrency prices reach specified thresholds",
+  "main": "index.js",
+  "scripts": {
+    "start": "node start.js",
+    "dev": "node index.js"
+  },
+  "keywords": [
+    "cryptocurrency",
+    "telegram",
+    "price-alert",
+    "dexpaprika",
+    "crypto-bot"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.6.2",
+    "dotenv": "^16.3.1",
+    "node-schedule": "^2.1.1",
+    "node-telegram-bot-api": "^0.64.0"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}

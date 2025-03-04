@@ -1,0 +1,7 @@
+https://api.dexpaprika.com/networks/solana/tokens/So11111111111111111111111111111111111111112
+
+price is under the .summary.price_usd from the JSON response. 
+
+So11111111111111111111111111111111111111112
+
+solana
