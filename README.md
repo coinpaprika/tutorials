@@ -20,6 +20,7 @@ Below is a list of available tutorials in this repository:
 | 📁 Tutorial Name | 📜 Description |
 |-----------------|--------------|
 | [**getting-started/**](getting-started/) | Learn how to retrieve the price of any token using DexPaprika API. |
+| [**Free Alert System build with AI**](ai-alert-system/) | Learn how build an Alert System with AI, Telegram & DexPaprika! |
 | More Coming Soon... | Stay tuned for additional guides! |
 
 ## 📢 Resources
