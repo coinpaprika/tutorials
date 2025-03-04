@@ -1,17 +1,16 @@
-# Cryptocurrency Price Alert Bot
+# Build a Crypto Price Alert Bot with DexPaprika API
 
-A simple Node.js application that monitors cryptocurrency prices using the DexPaprika API and sends alerts to Telegram when price thresholds are met.
+## Overview
+This tutorial guides you through building a **real-time cryptocurrency price alert system** that monitors prices using the **DexPaprika API** and sends notifications to your Telegram when price thresholds are met. Perfect for traders and developers who want to stay updated on market movements without constant manual checking.
 
 ## Features
-
 - Track any cryptocurrency available on DexPaprika API
-- Set custom price thresholds
-- Get alerts when prices go above or below your target
-- Configurable check intervals
-- Notifications sent directly to your Telegram
+- Set custom price thresholds for buy/sell opportunities
+- Get instant alerts when prices go above or below your targets
+- Configure check intervals to match your trading strategy
+- Receive notifications directly on Telegram
 
 ## Prerequisites
-
 - Node.js (v14 or higher)
 - npm (Node Package Manager)
 - A Telegram account
@@ -19,88 +18,116 @@ A simple Node.js application that monitors cryptocurrency prices using the DexPa
 
 ## Setup Instructions
 
-### 1. Setting up your Telegram Bot
+### 1. Create Your Telegram Bot
+1. Open Telegram and search for "BotFather" (@BotFather)
+2. Start a chat and send the command `/newbot`
+3. Follow the instructions to create your bot
+4. Save the **bot token** BotFather provides you
 
-1. Open Telegram and search for the "BotFather" (@BotFather)
-2. Start a chat with BotFather and send the command `/newbot`
-3. Follow the instructions to create a new bot
-4. Once created, BotFather will give you a **bot token**. Save this for later.
-
-### 2. Getting your Telegram Chat ID
-
-1. Start a chat with your new bot
-2. Send a message to your bot (any message)
-3. Visit this URL in your browser, replacing `YOUR_BOT_TOKEN` with your actual bot token:
+### 2. Get Your Telegram Chat ID
+1. Start a conversation with your new bot
+2. Send any message to your bot
+3. Visit this URL in your browser (replace with your actual token):
    ```
    https://api.telegram.org/botYOUR_BOT_TOKEN/getUpdates
    ```
-4. Look for the `"chat":{"id":XXXXXXXXX,` value in the response. This number is your **chat ID**.
+4. Find the `"chat":{"id":XXXXXXXXX,` value in the response - this is your **chat ID**
 
-### 3. Clone and install the application
-
-1. Ensure Node.js is installed on your system
-2. Download all the files from this project
-3. Open a terminal/command prompt in the project directory
-4. Run the following command to install dependencies:
-   ```
+### 3. Set Up the Project
+1. Clone this repository or download the project files
+2. Navigate to the project directory in your terminal
+3. Install dependencies:
+   ```bash
    npm install
    ```
 
-### 4. Configure your settings
-
-1. Edit the `.env` file in the project directory
-2. Fill in the following values:
-   - `TELEGRAM_BOT_TOKEN`: Your bot token from step 1
-   - `TELEGRAM_CHAT_ID`: Your chat ID from step 2
-   - `CRYPTO_TOKEN_ID`: The ID of the cryptocurrency you want to track (default is Solana SOL token)
-   - `CRYPTO_NETWORK`: The blockchain network (default is "solana")
-   - `TARGET_PRICE`: The price threshold in USD (e.g., 50)
-   - `ALERT_TYPE`: Set to either "above" or "below" to specify when to trigger alerts
-   - `CHECK_INTERVAL`: How often to check prices, in minutes (e.g., 15)
-
-## Running the Application
-
-1. Open a terminal/command prompt in the project directory
-2. Run the following command:
+### 4. Configure Your Settings
+1. Create a `.env` file in the project directory (use the template below)
+2. Fill in your details:
    ```
+   # Telegram Bot Token (Get this from BotFather on Telegram)
+   TELEGRAM_BOT_TOKEN=your_telegram_bot_token_here
+
+   # Telegram Chat ID (The chat where alerts will be sent)
+   TELEGRAM_CHAT_ID=your_telegram_chat_id_here
+
+   # Cryptocurrency to track (token address)
+   CRYPTO_TOKEN_ID=So11111111111111111111111111111111111111112
+   CRYPTO_NETWORK=solana
+
+   # Price threshold for alert (in USD)
+   TARGET_PRICE=135
+   # Alert type: "above" or "below" - to trigger when price goes above or below target
+   ALERT_TYPE=above
+
+   # How often to check price (in minutes)
+   CHECK_INTERVAL=1
+   ```
+
+### 5. Finding the Right Token Address
+Need to track a different token? Use DexPaprika API to find its address:
+
+1. List available networks:
+   ```bash
+   curl -X GET "https://api.dexpaprika.com/networks" | jq
+   ```
+
+2. Search for your token:
+   ```bash
+   curl -X GET "https://api.dexpaprika.com/search?query=YOUR_TOKEN_NAME" | jq
+   ```
+
+3. Use the network and token address from the response in your .env file
+
+## Running the Bot
+1. Start the bot:
+   ```bash
    node index.js
    ```
-3. The application will start and send an initial message to your Telegram
-4. It will continue running and checking prices at your specified interval
-5. When the price condition is met, you'll receive a Telegram alert
+2. You'll receive a confirmation message on Telegram
+3. The bot will check prices at your specified interval
+4. When your price condition is met, you'll get an alert
 
-## Setting Up as a Background Service
-
-For continuous operation, you might want to run this as a background service:
+## Running as a Background Service
 
 ### On Linux/Mac:
-You can use `pm2` to keep the script running:
-
-```
+```bash
 npm install -g pm2
 pm2 start index.js --name crypto-alert
 pm2 save
 ```
 
 ### On Windows:
-You can create a Windows service or use a tool like `forever`:
-
-```
+```bash
 npm install -g forever
 forever start index.js
 ```
 
+## How It Works
+1. The application connects to DexPaprika API to retrieve real-time token prices
+2. It compares the current price against your target threshold
+3. When the condition is met, it sends an immediate alert via the Telegram Bot API
+4. The process repeats based on your configured check interval
+
 ## Troubleshooting
+- Not receiving messages? Double-check your bot token and chat ID
+- Ensure your network/token combination is valid in DexPaprika
+- Check console output for any error messages
 
-- If you don't receive the startup message, double-check your bot token and chat ID
-- Ensure the API endpoints are accessible from your network
-- Check the console output for any error messages
-- Verify that your cryptocurrency token ID is correct
+## Next Steps
+- Add multiple price alerts
+- Implement price trend notifications
+- Create a web dashboard for monitoring
+- Set up SMS alerts as backup
 
-## Customizing
-
-You can modify the alert messages by editing the `telegramBot.js` file. The alert format can be customized to include additional information or different formatting.
+## Additional Resources
+- [DexPaprika API Documentation](https://docs.dexpaprika.com/introduction)
+- [Complete Video Tutorial](https://www.youtube.com/watch?v=M7XX6HKi-lo)
+- [Join our Discord for Help](https://discord.gg/mS4cWp6a)
 
 ## License
+This project is open-source and free to use for personal or commercial purposes.
 
-This project is open-source and available for personal or commercial use. 
+---
+
+Built with DexPaprika API - currently in **beta** and free to use. 
