@@ -122,7 +122,7 @@ forever start index.js
 
 ## Additional Resources
 - [DexPaprika API Documentation](https://docs.dexpaprika.com/introduction)
-- [Complete Video Tutorial](https://www.youtube.com/watch?v=M7XX6HKi-lo)
+- [Complete Video Tutorial](https://youtu.be/UJIBbwwbpPI)
 - [Join our Discord for Help](https://discord.gg/mS4cWp6a)
 
 ## License
