@@ -24,8 +24,8 @@ Below is a list of available tutorials in this repository:
 | More Coming Soon... | Stay tuned for additional guides! |
 
 ## Resources
-**Watch the Video Tutorial:** [https://www.youtube.com/watch?v=BaRvndUG1EQ]  
-**API Documentation:** [https://docs.dexpaprika.com/introduction]  
-**Join our Discord for Feedback & Questions:** [https://discord.gg/mS4cWp6a]  
+**Watch the Video Tutorials:** [Our Channel](https://www.youtube.com/@coinpaprika_com)  
+**API Documentation:** [DexPaprika Docs](https://docs.dexpaprika.com/introduction)  
+**Join our Discord for Feedback & Questions:** [Discord](https://discord.gg/DhJge5TUGM)  
 
 Right now, the API is in **beta** and free to use. Test it out and share your feedback with us!
