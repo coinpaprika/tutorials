@@ -4,7 +4,7 @@
 In this tutorial, you'll learn how to **fetch the price of any token** using **DexPaprika API**, CoinPaprika's latest product. The tutorial demonstrates how to structure simple **cURL** requests and use API endpoints directly from the command line.
 
 ## Watch the Video
-**[https://www.youtube.com/watch?v=BaRvndUG1EQ]** - Step-by-step guide on retrieving token prices.
+**[https://www.youtube.com/watch?v=UJIBbwwbpPI]** - Step-by-step video guide on retrieving token prices.
 
 ## Steps to Fetch Token Price
 1. **Find the Right API Endpoint**  
@@ -40,7 +40,7 @@ In this tutorial, you'll learn how to **fetch the price of any token** using **D
    - This ensures you get only get price as a response.
 
 ## Additional Resources
-**API Documentation:** [https://docs.dexpaprika.com/api-reference/tokens/get-a-tokens-latest-data-on-a-network]  
-**Need Help? Join our Discord!** [https://discord.gg/mS4cWp6a]  
+**API Documentation:** [Our Docs](https://docs.dexpaprika.com/api-reference/tokens/get-a-tokens-latest-data-on-a-network)  
+**Need Help? Join our Discord!** [Discord](https://discord.gg/DhJge5TUGM) 
 
 The **DexPaprika API** is currently in **beta** and free to use. Try it out and let us know what you think!  
