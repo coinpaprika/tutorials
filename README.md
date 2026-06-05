@@ -14,6 +14,19 @@ Welcome to the **DexPaprika API Tutorials** repository! This is your go-to resou
    ```
 2. Navigate to the tutorial folder of your choice and follow the README inside.
 
+## Try the API in 10 seconds
+No API key, no signup. List the supported chains, then grab the top pools on one:
+
+```sh
+# All supported networks
+curl "https://api.dexpaprika.com/networks"
+
+# Top liquidity pools on Ethereum
+curl "https://api.dexpaprika.com/networks/ethereum/pools?limit=5"
+```
+
+That second call returns the top Ethereum pools (Uniswap, USDC/USDT, etc.) with live volume, price, and the token pair. From here, the tutorials below build real apps on top of these endpoints.
+
 ## Tutorials Directory
 Below is a list of available tutorials in this repository:
 
