@@ -22,7 +22,7 @@ No API key, no signup. List the supported chains, then grab the top pools on one
 curl "https://api.dexpaprika.com/networks"
 
 # Top liquidity pools on Ethereum
-curl "https://api.dexpaprika.com/networks/ethereum/pools?limit=5"
+curl "https://api.dexpaprika.com/networks/ethereum/pools/search?limit=5"
 ```
 
 That second call returns the top Ethereum pools (Uniswap, USDC/USDT, etc.) with live volume, price, and the token pair. From here, the tutorials below build real apps on top of these endpoints.
@@ -34,6 +34,7 @@ Below is a list of available tutorials in this repository:
 |-----------------|--------------|
 | [**getting-started/**](getting-started/) | Learn how to retrieve the price of any token using DexPaprika API. |
 | [**crypto-alert-bot/**](crypto-alert-bot/) | Learn how build an Alert System with Telegram & DexPaprika! |
+| [**technical-indicators-agent/**](technical-indicators-agent/) | Feed an AI trading agent with RSI, MACD and Bollinger Bands computed by the API. |
 | More Coming Soon... | Stay tuned for additional guides! |
 
 ## Resources
@@ -41,4 +42,4 @@ Below is a list of available tutorials in this repository:
 **API Documentation:** [DexPaprika Docs](https://docs.dexpaprika.com/introduction)  
 **Join our Discord for Feedback & Questions:** [Discord](https://discord.gg/DhJge5TUGM)  
 
-Right now, the API is in **beta** and free to use. Test it out and share your feedback with us!
+No key is needed to start, and a free key from [console.dexpaprika.com](https://console.dexpaprika.com) raises the limits. Plans are on [pricing](https://dexpaprika.com/api/pricing). Test it out and share your feedback with us!
