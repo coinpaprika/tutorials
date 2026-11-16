@@ -1,0 +1,41 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+# The tutorials need Telegram and Anthropic credentials to run, so CI checks
+# what it can without them: dependencies install and every file parses.
+jobs:
+  crypto-alert-bot:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: crypto-alert-bot
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      # package-lock.json is gitignored, so install resolves fresh, as a reader's would.
+      - run: npm install --no-audit --no-fund
+      - name: Syntax check
+        run: for f in $(git ls-files '*.js'); do node --check "$f"; done
+
+  technical-indicators-agent:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: technical-indicators-agent
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install -r requirements.txt
+      - name: Syntax check
+        run: python -m py_compile agent.py
